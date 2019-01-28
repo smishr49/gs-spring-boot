@@ -9,7 +9,6 @@ node {
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
       sh '''
       set +x
-      source /etc/profile.d/jenkins.sh
     // Run the maven build
          mvn clean package
          cd target
