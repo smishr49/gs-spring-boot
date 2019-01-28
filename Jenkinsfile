@@ -7,7 +7,7 @@ node {
       def mvn_version = 'Maven'
    
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-      sudo sh '''
+      sh '''
       whoami
     // Run the maven build
          mvn clean package
