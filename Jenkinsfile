@@ -4,14 +4,21 @@ node {
    }
    stage('build') {
       
-      // Run the maven build
-       sh '''
+      def mvn_version = 'M3'
+   
+      withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+    sh '''
+    // Run the maven build
          mvn clean package
          cd target
          cp ../src/main/resources/web.config web.config
          cp todo-app-java-on-azure-1.0-SNAPSHOT.jar app.jar 
          zip todo.zip app.jar web.config
       '''
+   }
+      
+      
+     
           
    }
    stage('deploy') {
