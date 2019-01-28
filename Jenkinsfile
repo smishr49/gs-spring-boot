@@ -4,7 +4,7 @@ node {
    }
    stage('build') {
       
-      def mvn_version = 'M3'
+      def mvn_version = 'Maven'
    
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
     sh '''
