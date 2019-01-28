@@ -6,8 +6,7 @@ node {
       
       withMaven(
         // Maven installation declared in the Jenkins "Global Tool Configuration"
-        maven: 'mvn'
-         ){
+        maven: 'Maven') {
       // Run the maven build
        sh '''
          mvn clean package
