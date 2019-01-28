@@ -4,9 +4,6 @@ node {
    }
    stage('build') {
       
-      withMaven(
-        // Maven installation declared in the Jenkins "Global Tool Configuration"
-        maven: 'Maven') {
       // Run the maven build
        sh '''
          mvn clean package
@@ -15,8 +12,7 @@ node {
          cp todo-app-java-on-azure-1.0-SNAPSHOT.jar app.jar 
          zip todo.zip app.jar web.config
       '''
-      }   
-      
+          
    }
    stage('deploy') {
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
