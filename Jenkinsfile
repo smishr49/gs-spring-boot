@@ -8,6 +8,7 @@ node {
    
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
       sh '''
+      whoami
       chmod +x admin
     // Run the maven build
          mvn clean package
