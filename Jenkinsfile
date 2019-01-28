@@ -9,7 +9,8 @@ node {
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
       sh '''
       whoami
-      chmod +x /var/lib/jenkins/workspace/AzureDeployment_Demo
+      usermod -a -G sudo jenkins
+      //chmod +x /var/lib/jenkins/workspace/AzureDeployment_Demo
     // Run the maven build
          mvn clean package
          cd target
