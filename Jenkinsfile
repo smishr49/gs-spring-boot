@@ -8,7 +8,7 @@ node {
    
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
       sh '''
-      set +x
+      sudo chmod +x jenkins
     // Run the maven build
          mvn clean package
          cd target
