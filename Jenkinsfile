@@ -14,7 +14,7 @@ node {
          cd target
          cp ../src/main/java/hello/web.config web.config
          cp gs-spring-boot-0.1.0.jar app.jar 
-         zip gs-spring-boot-0.1.0.jar app.jar web.config
+         zip todo.zip app.jar web.config
       '''
    }
       
