@@ -9,7 +9,6 @@ node {
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
       sh '''
       whoami
-    // Run the maven build
          mvn clean package
          cd target
          cp ../src/main/resources/web.config web.config
