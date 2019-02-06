@@ -1,8 +1,5 @@
-pipeline {   
-     agent {
-        label 'Azure-Docker-Slave'
-    }
-stages { 
+node {   
+    
    stage('init') {
       checkout scm
    }
@@ -30,5 +27,5 @@ stages {
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/todo.zip"
    }
- }
 }
+
