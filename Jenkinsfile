@@ -1,7 +1,5 @@
-node {
-    agent {
-        label 'Azure-Docker-Slave'
-      }
+node (Azure-Docker-Slave) {
+    
    stage('init') {
       checkout scm
    }
