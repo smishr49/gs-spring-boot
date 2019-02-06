@@ -1,5 +1,8 @@
-node (Azure-Docker-Slave) {
-    
+pipeline {   
+     agent {
+        label 'Azure-Docker-Slave'
+    }
+     
    stage('init') {
       checkout scm
    }
